@@ -30,8 +30,8 @@ Python ≥ 3.10 with `pandas`, `numpy`, `scipy`, `scikit-learn`, `prince`,
 `matplotlib`, `openpyxl`. Document generation additionally uses Node.js with the
 `docx` package.
 
-```
-bashpip install pandas numpy scipy scikit-learn prince matplotlib openpyxl
+```bash
+pip install pandas numpy scipy scikit-learn prince matplotlib openpyxl
 python persona_clustering.py
 python assignment_rules.py
 python make_supp_data.py
