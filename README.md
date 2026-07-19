@@ -11,6 +11,7 @@ The study constructs a typology of post-fellowship professional profiles of all 
 Scripts are run from the repository root in this order:
 
 | Step | script | Purpose |
+|------|--------|---------|
 | 1 | persona_clustering.py | Exploratory cluster analysis (stage 2): MCA + Ward on 12 binary indicators, silhouette scan k=2–6, bootstrap Jaccard stability (B=500), leave-one-out ARI, PAM cross-check. Writes cluster profiles and assignments. |
 | 2 | assignment_rules.py | Rule-based persona assignment (stage 4): applies the five assignment rules without precedence, reports unambiguous matches (41/57) and consensus cases (16/57), computes the within/between-type homogeneity check, and builds the adjudication worksheet for the coder consensus meeting.|
 | 3 | make_adjudication_xlsx.py | Formats the adjudication worksheet as an Excel workbook for the consensus meeting (guiding questions per rule combination, documented rationale as audit trail).|
