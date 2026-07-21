@@ -3,11 +3,22 @@ Alumni Personas of the NHS Fellowship in Clinical AI -
 This Repository is part of our Alan Turing PhD Enrichment Scheme Project 2026, Research Project MRC Advancing Biomedical Data Science Careers (ABDC). 
 
 Analysis code for the persona component of:
-[Manuscript title]. Sophie Perret and Kathryn Woodward. [journal name], [year]. DOI: [tba]
+Mobilising Clinical AI Skills: A Mixed-Methods Evaluation of a National Medical Professional Upskilling Programme. Sophie Perret and Kathryn Woodward. [journal name], [year]. DOI: [tba]
 
 The study constructs a typology of post-fellowship professional profiles of all 57 alumni of the first three cohorts of the NHS Fellowship in Clinical AI, based on a systematic digital footprint analysis supplemented by an alumni survey. Type construction follows Kluge's four-stage model of empirically grounded type construction; the five resulting types are characterised as personas (Embedded Clinician, Academic Researcher, Public Communicator, Policy Shaper, Industry Mover).
 
-## Pipeline
+
+
+## Supplementary Information on Type Construction (RQ1)
+| # | document | Purpose |
+|------|--------|---------|
+| 1 | `survey.docx` | interview questions for the semi-structured interviews |
+| 2 | Pipeline | description on how to run the scripts used in in the type construction |
+| 3 | `methods_detailed.docx` | document containing the exploratory cluster analysis in detail; stability assessment; rule-based classification procedure in detail |
+| 4 | `figures_detailed.pdf` | supplementary figures: Fig. S1 Bootstrap-Stability; Fig. S2 MCA-Karte; Fig. S3 Continuum; Fig. S4 Heatmap  |
+| 5 | `tables_detailed.pdf` | supplementary tables: Table S1 Codebook; Table S2 Assignment rules; Table S3 Stability metrics; Table S4 Adjudication summary; Table S5 Type x Indicator prevalence |
+
+### Pipeline
 Scripts are run from the repository root in this order:
 
 | Step | script | Purpose |
@@ -20,12 +31,12 @@ Scripts are run from the repository root in this order:
 
 The permutation test against marginal-preserving null data and the aggregated dimension-score sensitivity analysis are documented in the Supplementary Methods; both reuse the functions in `persona_clustering.py`.
 
-## Data availability
+### Data availability
 Individual-level data are not included in this repository. The study population is small (n = 57) and professionally identifiable; person-level footprint records, survey responses and the ID mapping are therefore not shared. Aggregated data underlying all tables and figures are available in the paper and its Supplementary Information. Requests for further data access can be directed to the corresponding author and are subject to ethical approval.
 
 Scripts expect the (non-public) source workbook at `data/Overview_evaluation_cleaned.xlsx` with the sheets `Overview`, `Work (all Cohorts)`, `Publications (1st–3rd Cohort)` and `AI Activities (1st–3rd Cohort)`; outputs are written to `results/`.
 
-## Requirements
+### Requirements
 Python ≥ 3.10 with `pandas`, `numpy`, `scipy`, `scikit-learn`, `prince`,
 `matplotlib`, `openpyxl`. Document generation additionally uses Node.js with the
 `docx` package.
@@ -37,10 +48,21 @@ python assignment_rules.py
 python make_supp_data.py
 ```
 
-Random seeds are fixed (bootstrap and permutation procedures use `numpy.random.default_rng(2026)`); results in the paper are exactly reproducible given the source data.
+Random seeds are fixed (bootstrap and permutation procedures use `numpy.random.default_rng(2026)`); results in the paper are exactly reproducible given the source data. 
+
+## Supplementary Information Interviews
+| # | document | Purpose |
+|------|--------|---------|
+| 1 | `interview-guide.docx` | interview questions for the semi-structured interviews |
+
+## Supplementary Information in General
+| # | document | Purpose |
+|------|--------|---------|
+| 1 | `coreq_checklist.docx` | COREQ-Checklist |
+| 2 | `gramms_checklist.docx` | GRAMMS-Checklist |
 
 ## Citation
 If you use this code, please cite the paper above. [BibTeX to be added on publication]
 
 ## License
-[MIT / to be confirmed by the study team]
+[MIT]
