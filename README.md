@@ -7,7 +7,11 @@ Mobilising Clinical AI Skills: A Mixed-Methods Evaluation of a National Medical 
 
 The study constructs a typology of post-fellowship professional profiles of all 57 alumni of the first three cohorts of the NHS Fellowship in Clinical AI, based on a systematic digital footprint analysis supplemented by an alumni survey. Type construction follows Kluge's four-stage model of empirically grounded type construction; the five resulting types are characterised as personas (Embedded Clinician, Academic Researcher, Public Communicator, Policy Shaper, Industry Mover).
 
-
+## Supplementary Information in General
+| # | document | Purpose |
+|------|--------|---------|
+| 1 | `coreq_checklist.docx` | COREQ-Checklist |
+| 2 | `gramms_checklist.docx` | GRAMMS-Checklist |
 
 ## Supplementary Information on Type Construction (RQ1)
 | # | document | Purpose |
@@ -50,16 +54,10 @@ python make_supp_data.py
 
 Random seeds are fixed (bootstrap and permutation procedures use `numpy.random.default_rng(2026)`); results in the paper are exactly reproducible given the source data. 
 
-## Supplementary Information Interviews
+## Supplementary Information Interviews (RQ 2)
 | # | document | Purpose |
 |------|--------|---------|
 | 1 | `interview-guide.docx` | interview questions for the semi-structured interviews |
-
-## Supplementary Information in General
-| # | document | Purpose |
-|------|--------|---------|
-| 1 | `coreq_checklist.docx` | COREQ-Checklist |
-| 2 | `gramms_checklist.docx` | GRAMMS-Checklist |
 
 ## Citation
 If you use this code, please cite the paper above. [BibTeX to be added on publication]
