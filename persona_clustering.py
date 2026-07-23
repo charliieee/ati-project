@@ -8,6 +8,7 @@ Variants:  A = 12 active variables
            B = Speaker+Writing+Influencer merged into PublicEngage (11 active)
 """
 
+# ===== IMPORTS =====
 from pathlib import Path
 
 import numpy as np
@@ -18,6 +19,7 @@ from scipy.spatial.distance import pdist, squareform
 from scipy.stats import hypergeom
 from sklearn.metrics import adjusted_rand_score, silhouette_score
 
+# ===== CONFIGURATION & CONSTANTS =====
 RNG = np.random.default_rng(2026)
 HERE = Path(__file__).parent
 OUT = HERE / "results"
@@ -42,6 +44,7 @@ ACTIVE_B = ["Industry", "Teaching", "FurtherEd", "FellowProg", "IndivFellow",
 PASSIVE = ["Career", "Influencer", "MedTech", "Cohort"]
 K_RANGE = range(2, 7)
 
+# ===== CORE FUNCTIONS =====
 
 def load(path):
     df = pd.read_excel(path, sheet_name="Overview")
@@ -113,6 +116,7 @@ def pam(dist, k, n_init=20):
             best = (cost, lab + 1)
     return best[1]
 
+# ===== ANALYSIS FUNCTIONS =====
 
 def profile(df, labels, active):
     """Prevalence (%) per cluster, with hypergeometric enrichment p-values."""
@@ -150,6 +154,7 @@ def run_variant(name, df, active):
     assign = df[["ID", "Cohort"]].assign(cluster=labels, pam_cluster=pam_lab)
     return "\n".join(report), prof, assign, sil
 
+# ===== MAIN EXECUTION =====
 
 def main():
     OUT.mkdir(exist_ok=True)
