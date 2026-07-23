@@ -1,6 +1,6 @@
 # ati-project
 Alumni Personas of the NHS Fellowship in Clinical AI - 
-This Repository is part of our Alan Turing PhD Enrichment Scheme Project 2026, Research Project MRC Advancing Biomedical Data Science Careers (ABDC). 
+This Repository is part of our Alan Turing PhD Enrichment Scheme Project 2026, affiliated with the Research Project Advancing Biomedical Data Science Careers (ABDC). 
 
 Analysis code for the persona component of:
 Mobilising Clinical AI Skills: A Mixed-Methods Evaluation of a National Medical Professional Upskilling Programme. Sophie Perret and Kathryn Woodward. [journal name], [year]. DOI: [tba]
@@ -8,19 +8,17 @@ Mobilising Clinical AI Skills: A Mixed-Methods Evaluation of a National Medical 
 The study constructs a typology of post-fellowship professional profiles of all 57 alumni of the first three cohorts of the NHS Fellowship in Clinical AI, based on a systematic digital footprint analysis supplemented by an alumni survey. Type construction follows Kluge's four-stage model of empirically grounded type construction; the five resulting types are characterised as personas (Embedded Clinician, Academic Researcher, Public Communicator, Policy Shaper, Industry Mover).
 
 ## Supplementary Information in General
-| # | document | Purpose |
-|------|--------|---------|
-| 1 | `coreq_checklist.docx` | COREQ-Checklist |
-| 2 | `gramms_checklist.docx` | GRAMMS-Checklist |
+This is the Supplementary Document `supplement_document.pdf` handed in when submitting the paper. 
 
-## Supplementary Information on Type Construction (RQ1)
-| # | document | Purpose |
+| # | document | content |
 |------|--------|---------|
-| 1 | `survey.docx` | interview questions for the semi-structured interviews |
-| 2 | Pipeline | description on how to run the scripts used in in the type construction |
-| 3 | `methods_detailed.docx` | document containing the exploratory cluster analysis in detail; stability assessment; rule-based classification procedure in detail |
-| 4 | `figures_detailed.pdf` | supplementary figures: Fig. S1 Bootstrap-Stability; Fig. S2 MCA-Karte; Fig. S3 Continuum; Fig. S4 Heatmap  |
-| 5 | `tables_detailed.pdf` | supplementary tables: Table S1 Codebook; Table S2 Assignment rules; Table S3 Stability metrics; Table S4 Adjudication summary; Table S5 Type x Indicator prevalence |
+| S1 | Exploratory Cluster Analysis | with Supplementary Table S1 Codebook |
+| S2 | Stability Assessment | with Supplementary Figs. S1 Bootstrap-Stability, S2 MCA-Map and S3 Continuum; Supplementary Table S3 Stability metrics  |
+| S3 | Rule-based Classification Procedure | with Supplementary Table S2 Assignment rules, S4 Adjudication summary and S5 Type x Indicator prevalence, Supplementary Figs. S4 Heatmap |
+| S4 | GRAMMS Checklist | good Reporting of A Mixed Methods Stud, 6 item checklist to ensure transparent reporting of mixed methods research |
+| S5 | COREQ Reporting | consolidated criteria for reporting qualitative research, 32 item checklist for interviews and focus groups |
+| S6 | Survey Questions |supplementary information for type building in RQ1 |
+| S7 | Interview Guide |semi-structured interview to address RQ2 |
 
 ### Pipeline
 Scripts are run from the repository root in this order:
@@ -36,9 +34,11 @@ Scripts are run from the repository root in this order:
 The permutation test against marginal-preserving null data and the aggregated dimension-score sensitivity analysis are documented in the Supplementary Methods; both reuse the functions in `persona_clustering.py`.
 
 ### Data availability
-Individual-level data are not included in this repository. The study population is small (n = 57) and professionally identifiable; person-level footprint records, survey responses and the ID mapping are therefore not shared. Aggregated data underlying all tables and figures are available in the paper and its Supplementary Information. Requests for further data access can be directed to the corresponding author and are subject to ethical approval.
+Individual-level data are not included in this repository. The study population is small (n = 57) and professionally identifiable; person-level footprint records, survey responses and the ID mapping are therefore not shared. An pseudonymised quantitative dataset `data/Overview_evaluation_cleaned.xlsx` generated during the digital footprint analysis was made publicly available.  
 
-Scripts expect the (non-public) source workbook at `data/Overview_evaluation_cleaned.xlsx` with the sheets `Overview`, `Work (all Cohorts)`, `Publications (1st–3rd Cohort)` and `AI Activities (1st–3rd Cohort)`; outputs are written to `results/`.
+Requests for further data access can be directed to the corresponding author and are subject to ethical approval.
+
+Scripts expect the public source workbook at `data/Overview_evaluation_cleaned.xlsx` with the sheets `Overview`, `Work (all Cohorts)`, `Publications (1st–3rd Cohort)` and `AI Activities (1st–3rd Cohort)`; outputs are written to `results/`.
 
 ### Requirements
 Python ≥ 3.10 with `pandas`, `numpy`, `scipy`, `scikit-learn`, `prince`,
@@ -53,11 +53,6 @@ python make_supp_data.py
 ```
 
 Random seeds are fixed (bootstrap and permutation procedures use `numpy.random.default_rng(2026)`); results in the paper are exactly reproducible given the source data. 
-
-## Supplementary Information Interviews (RQ 2)
-| # | document | Purpose |
-|------|--------|---------|
-| 1 | `interview-guide.docx` | interview questions for the semi-structured interviews |
 
 ## Citation
 If you use this code, please cite the paper above. [BibTeX to be added on publication]
